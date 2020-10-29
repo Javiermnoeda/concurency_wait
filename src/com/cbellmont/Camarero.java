@@ -6,11 +6,7 @@ public class Camarero extends Thread {
     public void run() {
         try {
             while (true) {
-                synchronized (Main.list){
-                    Main.list.wait();
                     prepararComanda();
-                    Main.list.notify();
-                }
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
